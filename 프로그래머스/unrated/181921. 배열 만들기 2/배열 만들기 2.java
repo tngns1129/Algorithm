@@ -7,11 +7,9 @@ class Solution {
             String binaryString = Integer.toBinaryString(i);
             int num = Integer.parseInt(binaryString);
             num *= 5;
-            ans.add(num);
+            if(num >= l && num <= r)
+                ans.add(num);
         }
-        ans.removeIf(item -> item < l);
-        ans.removeIf(item -> item > r);
-        System.out.println(ans.size());
         if(ans.size() == 0){
             ans.add(-1);
         }
