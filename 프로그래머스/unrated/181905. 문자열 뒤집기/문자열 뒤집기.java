@@ -11,8 +11,8 @@ class Solution {
             arr[i] = stack.peek();
             stack.pop();
         }
-        for(int i = 0; i < arr.length; i++){
-            answer = answer + arr[i];
+        for(String i:arr){
+            answer = answer + i;
         }
         return answer;
     }
