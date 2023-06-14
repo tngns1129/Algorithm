@@ -5,7 +5,6 @@ class Solution {
             if(Long.parseLong(t.substring(i-p.length(),i)) <= Long.parseLong(p)){
                 answer ++;
             }
-            System.out.println(t.substring(i-p.length(),i));
         }
         return answer;
     }
