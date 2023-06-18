@@ -9,6 +9,9 @@ class Solution {
             myStr = myStr.replaceFirst(" ","");
         }
         answer = myStr.split(" ");
+        if(answer.length == 1 && answer[0].equals("")){
+            answer[0] = "EMPTY";
+        }
         return answer;
     }
 }
