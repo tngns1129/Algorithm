@@ -23,7 +23,6 @@ class Solution {
         }
         for(int i = 9; i >= 0; i--){
             if(xMap.containsKey(i) && yMap.containsKey(i)){
-                System.out.println("now");
                 if(xMap.get(i) > yMap.get(i)){
                     index = yMap.get(i);
                 } else{
@@ -34,8 +33,6 @@ class Solution {
                 }
             }
         }
-        System.out.println(xMap);
-        System.out.println(yMap);
         if(sb.length() == 0){
             answer = "-1";
         }else if(sb.charAt(0) == '0'){
