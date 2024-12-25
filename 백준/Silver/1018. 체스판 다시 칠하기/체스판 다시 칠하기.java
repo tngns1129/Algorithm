@@ -13,12 +13,9 @@ public class Main {
         for(int i=0; i< board.length; i++){
             board[i] = sc.nextLine();
         }
-
-
         char chess[][] = new char[8][8];
         char input[][] = new char[row][col];
-
-        ArrayList<Integer> answer = new ArrayList<Integer>();
+        int test=64;
 
         for(int i=0; i<board.length; i++){
             input[i] = board[i].toCharArray();
@@ -31,18 +28,13 @@ public class Main {
                         chess[x][y] = input[i+x][j+y];
                     }
                 }
-                answer.add(numOfPaint(chess));
+                if(test>numOfPaint(chess)){
+                    test = numOfPaint(chess);
+                }
             }
         }
 
-        int ans = answer.get(0);
-        for(int i= 0; i<answer.size(); i++){
-            if(answer.get(i) < ans){
-                ans = answer.get(i);
-            }
-        }
-
-        System.out.println(ans);
+        System.out.println(test);
     }
 
     static int numOfPaint(char chess[][]){
