@@ -16,6 +16,17 @@ public class Main {
         char chess[][] = new char[8][8];
         char input[][] = new char[row][col];
         int test=64;
+        int a=0;
+        char[][] nomalChess1 = {
+                {'W','B','W','B','W','B','W','B'},
+                {'B','W','B','W','B','W','B','W'},
+                {'W','B','W','B','W','B','W','B'},
+                {'B','W','B','W','B','W','B','W'},
+                {'W','B','W','B','W','B','W','B'},
+                {'B','W','B','W','B','W','B','W'},
+                {'W','B','W','B','W','B','W','B'},
+                {'B','W','B','W','B','W','B','W'}
+        };
 
         for(int i=0; i<board.length; i++){
             input[i] = board[i].toCharArray();
@@ -26,11 +37,16 @@ public class Main {
                 for(int x=0; x<8; x++){
                     for(int y=0; y<8; y++){
                         chess[x][y] = input[i+x][j+y];
+                        if(nomalChess1[x][y] == input[i+x][j+y]){
+                            a++;
+                        }
                     }
                 }
-                if(test>numOfPaint(chess)){
-                    test = numOfPaint(chess);
+                if(test>Math.min(a,64-a)){
+                    test = Math.min(a,64-a);
+                    
                 }
+                a=0;
             }
         }
 
