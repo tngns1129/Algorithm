@@ -46,7 +46,7 @@ public class Main {
     }
 
     static int numOfPaint(char chess[][]){
-        int a=0,b=0;
+        int a=0;
         char[][] nomalChess1 = {
                 {'W','B','W','B','W','B','W','B'},
                 {'B','W','B','W','B','W','B','W'},
@@ -57,27 +57,14 @@ public class Main {
                 {'W','B','W','B','W','B','W','B'},
                 {'B','W','B','W','B','W','B','W'}
         };
-        char[][] nomalChess2 = {
-                {'B','W','B','W','B','W','B','W'},
-                {'W','B','W','B','W','B','W','B'},
-                {'B','W','B','W','B','W','B','W'},
-                {'W','B','W','B','W','B','W','B'},
-                {'B','W','B','W','B','W','B','W'},
-                {'W','B','W','B','W','B','W','B'},
-                {'B','W','B','W','B','W','B','W'},
-                {'W','B','W','B','W','B','W','B'},
-        };
 
         for(int i=0; i< chess.length; i++) {
             for (int j = 0; j < chess[0].length; j++) {
                 if(chess[i][j] != nomalChess1[i][j]){
                     a++;
                 }
-                if(chess[i][j] != nomalChess2[i][j]){
-                    b++;
-                }
             }
         }
-        return Math.min(a, b);
+        return Math.min(a, 64-a);
     }
 }
